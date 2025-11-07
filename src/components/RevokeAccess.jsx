@@ -72,7 +72,7 @@ export default function RevokeAccess() {
       const signer = await provider.getSigner();
       const contract = new ethers.Contract(CONTRACT_ADDRESS, FileRegistryABI.abi, signer);
 
-      const id = (typeof ethers.toBigInt === "function") ? ethers.toBigInt(String(fileId)) : ethers.BigNumber.from(String(fileId));
+      const id = (typeof ethers.toBigInt === "function") ? ethers.toBigInt(String(fileId)) : ethers.toBigInt(String(fileId));
 
       const rec = await contract.getFile(id);
       const ownerOnChain = rec[0];
